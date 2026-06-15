@@ -34,5 +34,6 @@ jobs:
             echo "No schedule changes to commit."
           else
             git commit -m "Update posting status"
+            git pull --rebase --autostash
             git push
           fi
