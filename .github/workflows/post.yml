@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes (GitHub may run a few min late)
   workflow_dispatch: {}        # lets you run it manually from the Actions tab (for testing)
+  repository_dispatch:
+    types: [trigger-post]      # allows external services to trigger this exactly on time
 
 # Never let two runs overlap and fight over schedule.json.
 concurrency:
